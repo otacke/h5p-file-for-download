@@ -29,7 +29,6 @@ export default class FileForDownload extends H5P.EventDispatcher {
 
   /**
    * Attach library to wrapper.
-   *
    * @param {H5P.jQuery} $wrapper Content's container.
    */
   attach($wrapper) {
@@ -39,7 +38,6 @@ export default class FileForDownload extends H5P.EventDispatcher {
 
   /**
    * Build main DOM.
-   *
    * @returns {HTMLElement} Main DOM.
    */
   buildDOM() {
@@ -94,7 +92,6 @@ export default class FileForDownload extends H5P.EventDispatcher {
 
   /**
    * Get task title.
-   *
    * @returns {string} Title.
    */
   getTitle() {
@@ -106,7 +103,6 @@ export default class FileForDownload extends H5P.EventDispatcher {
 
   /**
    * Get description.
-   *
    * @returns {string} Description.
    */
   getDescription() {
