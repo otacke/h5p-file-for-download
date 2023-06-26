@@ -7,15 +7,15 @@
     "expanded": true,
     "fields": [
       {
-        "name": "displayName",
-        "type": "text",
-        "label": "Name to display",
-        "optional": true
-      },
-      {
         "name": "downloadName",
         "type": "text",
-        "label": "Name that the file should have when saving",
+        "label": "Name that the file should have when saving"
+      },
+      {
+        "name": "displayName",
+        "type": "text",
+        "label": "Name or text to display",
+        "description": "If not set, the desired file name will be displayed.",
         "optional": true
       },
       {
@@ -37,6 +37,12 @@
         "type": "text",
         "label": "Download",
         "default": "Download"
+      },
+      {
+        "name": "unnamedFile",
+        "type": "text",
+        "label": "Unnamed file",
+        "default": "Unnamed file"
       },
       {
         "name": "noFile",

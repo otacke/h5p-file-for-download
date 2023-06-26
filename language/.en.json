@@ -4,10 +4,11 @@
       "label": "Content",
       "fields": [
         {
-          "label": "Name to display"
+          "label": "Name that the file should have when saving"
         },
         {
-          "label": "Name that the file should have when saving"
+          "label": "Name to display",
+          "description": "If not set, the desired file name will be displayed."
         },
         {
           "label": "File",
@@ -21,6 +22,10 @@
         {
           "label": "Download",
           "default": "Download"
+        },
+        {
+          "label": "Unnamed file",
+          "default": "Unnamed file"
         },
         {
           "label": "No file provided",

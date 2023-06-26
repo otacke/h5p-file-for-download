@@ -4,10 +4,11 @@
       "label": "Inhalt",
       "fields": [
         {
-          "label": "Anzuzeigender Name"
+          "label": "Dateiname"
         },
         {
-          "label": "Dateiname"
+          "label": "Anzuzeigender Name",
+          "description": "Falls leer, wird der Dateiname angezeigt."
         },
         {
           "label": "Datei",
@@ -21,6 +22,10 @@
         {
           "label": "Download",
           "default": "Download"
+        },
+        {
+          "label": "Unnamed file",
+          "default": "Unnamed file"
         },
         {
           "label": "Keine Datei bereitgestellt",

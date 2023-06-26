@@ -25,6 +25,14 @@ export default class FileForDownload extends H5P.EventDispatcher {
     this.dictionary = new Dictionary();
     this.dictionary.fill({ l10n: this.params.l10n });
 
+    this.params.content.downloadName =
+      this.params.content.downloadName ??
+      this.dictionary.get('l10n.unnamedFile') ??
+      'Unnamed file';
+
+    this.params.content.displayName =
+      this.params.content.displayName ?? this.params.content.downloadName;
+
     this.dom = this.buildDOM();
   }
 
