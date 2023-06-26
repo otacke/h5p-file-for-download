@@ -1,6 +1,6 @@
 {
   "name": "h5p-file-for-download",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide a file for download",
   "private": true,
   "scripts": {
