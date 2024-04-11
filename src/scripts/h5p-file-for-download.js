@@ -1,6 +1,6 @@
-import Util from '@services/util';
-import Dictionary from '@services/dictionary';
-import MessageBox from '@components/messageBox/message-box';
+import Util from '@services/util.js';
+import Dictionary from '@services/dictionary.js';
+import MessageBox from '@components/messageBox/message-box.js';
 import './h5p-file-for-download.scss';
 
 export default class FileForDownload extends H5P.EventDispatcher {
