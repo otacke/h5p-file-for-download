@@ -15,7 +15,7 @@ export default class FileForDownload extends H5P.EventDispatcher {
 
     // Sanitize parameters
     this.params = Util.extend({
-      content: {}
+      content: {},
     }, params);
 
     this.contentId = contentId;
@@ -56,7 +56,7 @@ export default class FileForDownload extends H5P.EventDispatcher {
     // Show message if no file was provided
     if (!this.params.content.file) {
       const message = new MessageBox({
-        text: this.dictionary.get('l10n.noFile')
+        text: this.dictionary.get('l10n.noFile'),
       });
       dom.append(message.getDOM());
 
@@ -75,7 +75,7 @@ export default class FileForDownload extends H5P.EventDispatcher {
     const downloadButton = H5P.JoubelUI.createButton({
       type: 'button',
       html: this.dictionary.get('l10n.download'),
-      class: 'h5p-button h5p-file-for-download-button'
+      class: 'h5p-button h5p-file-for-download-button',
     }).get(0);
 
     downloadButton.addEventListener('click', () => {
@@ -108,7 +108,7 @@ export default class FileForDownload extends H5P.EventDispatcher {
   getTitle() {
     // H5P Core function: createTitle
     return H5P.createTitle(
-      this.extras?.metadata?.title || FileForDownload.DEFAULT_DESCRIPTION
+      this.extras?.metadata?.title || FileForDownload.DEFAULT_DESCRIPTION,
     );
   }
 
