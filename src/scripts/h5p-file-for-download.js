@@ -88,17 +88,40 @@ export default class FileForDownload extends H5P.EventDispatcher {
   }
 
   // Handle download
-  handleDownload() {
-    const anchor = document.createElement('a');
-    H5P.setSource(anchor, this.params.content.file, this.contentId);
-    anchor.href = anchor.src;
+  async handleDownload() {
+    const probe = document.createElement('a');
+    H5P.setSource(probe, this.params.content.file, this.contentId);
+    const sourceUrl = probe.src;
 
-    anchor.download = this.params.content.downloadName ||
-      anchor.href.split('/').pop();
+    const fileName = this.params.content.downloadName || sourceUrl.split('/').pop().split('?')[0];
+
+    const anchor = document.createElement('a');
+    anchor.download = fileName;
+
+    let blobUrl;
+    try {
+      const response = await fetch(sourceUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      const blob = await response.blob();
+      blobUrl = URL.createObjectURL(blob);
+      anchor.href = blobUrl;
+    }
+    catch (error) {
+      /* Cross-origin without CORS: fall back to direct link. Server's Content-Disposition will control the filename. */
+      anchor.href = sourceUrl;
+      anchor.target = '_blank';
+      anchor.rel = 'noopener';
+    }
 
     document.body.append(anchor);
     anchor.click();
-    document.body.removeChild(anchor);
+    anchor.remove();
+
+    if (blobUrl) {
+      URL.revokeObjectURL(blobUrl);
+    }
   }
 
   /**
